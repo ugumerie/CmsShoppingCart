@@ -11,6 +11,7 @@ namespace CmsShoppingCart.Areas.Admin.Controllers
         // GET: Admin/Dashboard
         public ActionResult Index()
         {
+           
             return View();
         }
     }
