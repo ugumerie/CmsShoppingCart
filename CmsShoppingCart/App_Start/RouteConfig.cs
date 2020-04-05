@@ -13,11 +13,29 @@ namespace CmsShoppingCart
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            routes.MapRoute(
-                name: "Default",
-                url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
-            );
+            routes.MapRoute("Cart", "cart/{action}/{id}", new { controller = "Cart", action = "Index", id = UrlParameter.Optional },
+             new[] { "CmsShoppingCart.Controllers" });
+
+            routes.MapRoute("Shop", "shop/{action}/{name}", new { controller = "Shop", action = "Index", name = UrlParameter.Optional },
+              new[] { "CmsShoppingCart.Controllers" });
+
+            routes.MapRoute("SidebarPartial", "pages/SidebarPartial", new { controller = "Pages", action = "SidebarPartial" },
+               new[] { "CmsShoppingCart.Controllers" });
+
+            routes.MapRoute("PagesMenuPartial", "pages/PagesMenuPartial", new { controller = "Pages", action = "PagesMenuPartial" },
+                new[] { "CmsShoppingCart.Controllers" });
+
+            routes.MapRoute("Pages", "{page}", new { controller = "Pages", action = "Index" },
+                new[] { "CmsShoppingCart.Controllers" });
+
+            routes.MapRoute("Default", "", new { controller = "Pages", action = "Index" },
+                new[] { "CmsShoppingCart.Controllers" });
+
+            //routes.MapRoute(
+            //    name: "Default",
+            //    url: "{controller}/{action}/{id}",
+            //    defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+            //);
         }
     }
 }

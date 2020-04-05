@@ -22,3 +22,30 @@ table.sorting.categories td {
 .ajaxdivtd {
     position: absolute;
 }
+
+/*div.addtocart {
+    position: relative;
+}*/
+
+span.loader {
+    display: none;
+}
+
+span.ajaxmsg {
+    background: green;
+    color: white;
+    padding: 10px;
+    border-radius: 10px;
+    display: none;
+    position: absolute;
+    bottom: 0;
+}
+
+.ajaxcart {
+    position: relative;
+    top: 5px;
+}
+
+.ib {
+    display: inline-block !important;
+}
